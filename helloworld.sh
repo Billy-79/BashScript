@@ -31,6 +31,20 @@
 
 #------------------------------------------------------------------------------------
 
+#echo "The system time and date is:"
+
+#date
+
+#------------------------------------------------------------------------------------
+
+name="Billy"
+
+now=$(date)
+
+echo "Hello $name"
+
 echo "The system time and date is:"
 
-date
+echo $now
+
+echo "Your username is: $USER"
