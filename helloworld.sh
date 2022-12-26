@@ -13,14 +13,24 @@
 #echo "Hello, my name is $myname."
 #echo "I'm $myage years old."
 
+#------------------------------------------------------------------------------------
+
 #word="fun"
 
 #echo "Linux is $word"
 #echo "Video games are $word"
 #echo "Sunny days are $word"
 
-now=$(date)
+#------------------------------------------------------------------------------------
+
+#now=$(date)
+
+#echo "The system time and date is:"
+
+#echo $now
+
+#------------------------------------------------------------------------------------
 
 echo "The system time and date is:"
 
-echo $now
+date
