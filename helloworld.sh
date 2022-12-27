@@ -37,14 +37,14 @@
 
 #------------------------------------------------------------------------------------
 
-name="Billy"
+#name="Billy"
 
-now=$(date)
+#now=$(date)
 
-echo "Hello $name"
+#echo "Hello $name"
 
-echo "The system time and date is:"
+#echo "The system time and date is:"
 
-echo $now
+#echo $now
 
-echo "Your username is: $USER"
+#echo "Your username is: $USER"
