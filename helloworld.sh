@@ -1,12 +1,12 @@
 #!/bin/bash
 
-### Lesson 02 - Hello World! ###
+#################### Lesson 02 - Hello World! ####################
 #echo "Hello World!"
 
 #echo "My current working directory is:"
 #pwd
 
-### Lesson 03 - Variables ###
+#################### Lesson 03 - Variables ####################
 #myname="Billy"
 #myage="43"
 
@@ -48,3 +48,15 @@
 #echo $now
 
 #echo "Your username is: $USER"
+
+#################### Lesson 05 If Statements ####################
+mynum=200
+
+if [ $mynum -eq 200 ]
+then
+    echo "The condition is true"
+fi
+
+#------------------------------------------------------------------------------------
+
+
