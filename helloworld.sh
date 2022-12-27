@@ -54,14 +54,28 @@
 
 #if [ $mynum -eq 200 ]
 #then
-#    echo "The condition is true"
+#    echo "The condition is true."
 #fi
 
 #------------------------------------------------------------------------------------
 
-mynum=300
+#mynum=300
  
+#if [ $mynum -eq 200 ]
+#then
+#    echo "The condition is true."
+#fi
+
+#------------------------------------------------------------------------------------
+
+mynum=200
+
 if [ $mynum -eq 200 ]
 then
-    echo "The condition is true"
+    echo "The condition is true."
+fi
+
+if [ $mynum -eq 300 ]
+then
+    echo "The variable does not equal 200."
 fi
