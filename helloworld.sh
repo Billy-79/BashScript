@@ -171,14 +171,21 @@
 
 #------------------------------------------------------------------------------------
 
-command=htop
+#command=htop
 
-if command -v $command
-then
-    echo "$command is available, let's run it..."
-else
-    echo "$command is NOT available, installing it..."
-    sudo apt update && sudo apt install -y $command
-fi
+#if command -v $command
+#then
+#    echo "$command is available, let's run it..."
+#else
+#    echo "$command is NOT available, installing it..."
+#    sudo apt update && sudo apt install -y $command
+#fi
 
-$command
+#$command
+
+#################### Lesson 06 Exit Codes ####################
+#package=htop
+
+#sudo apt install $package
+
+#echo "The exit code for the package install is: $?"
