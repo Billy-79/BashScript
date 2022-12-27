@@ -137,11 +137,20 @@
 
 #------------------------------------------------------------------------------------
 
-mynum=300
+#mynum=300
  
-if [ $mynum -lt 200 ]
+#if [ $mynum -lt 200 ]
+#then
+#    echo "The condition is true."
+#else
+#    echo "The variable does not equal 200."
+#fi
+
+#------------------------------------------------------------------------------------
+
+if [ -f ~/myfile ]
 then
-    echo "The condition is true."
+    echo "The file exists"
 else
-    echo "The variable does not equal 200."
+    echo "The file does not exist"
 fi
