@@ -215,9 +215,24 @@
 
 #------------------------------------------------------------------------------------
 
-package=notexist
+#package=notexist
 
-sudo apt install $package
+#sudo apt install $package
+
+#if [ $? -eq 0 ] 
+#then
+#    echo "The installation of $package was successful."
+#    echo "The new command is available here:"
+#    which $package
+#else
+#    echo "$package failed to install."
+#fi
+
+#------------------------------------------------------------------------------------
+
+package=htop
+
+sudo apt install $package >> package_install_results.log
 
 if [ $? -eq 0 ] 
 then
@@ -225,5 +240,5 @@ then
     echo "The new command is available here:"
     which $package
 else
-    echo "$package failed to install."
+    echo "$package failed to install." >> package_install_failure.log
 fi
