@@ -351,9 +351,18 @@
 
 #------------------------------------------------------------------------------------
 
+#while [ -f ~/testfile ]
+#do
+#    echo "The testfile exists."
+#done
+
+#echo "The testfile no longer exists. Exiting."
+
+#------------------------------------------------------------------------------------
+
 while [ -f ~/testfile ]
 do
-    echo "The testfile exists."
+    echo "As of $(date), the testfile exists."
 done
 
-echo "The testfile no longer exists. Exiting."
+echo "As of $(date), the testfile has gone missing."
