@@ -340,11 +340,20 @@
 #echo "You won't see this one either"
 
 #################### Lesson 07 While Loops ####################
-myvar=1
+#myvar=1
 
-while [ $myvar -le 10 ]
+#while [ $myvar -le 10 ]
+#do
+#    echo $myvar
+#    myvar=$(( $myvar +1 ))
+#    sleep 0.5
+#done
+
+#------------------------------------------------------------------------------------
+
+while [ -f ~/testfile ]
 do
-    echo $myvar
-    myvar=$(( $myvar +1 ))
-    sleep 0.5
+    echo "The testfile exists."
 done
+
+echo "The testfile no longer exists. Exiting."
