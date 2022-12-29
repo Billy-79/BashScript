@@ -369,10 +369,24 @@
 
 #------------------------------------------------------------------------------------
 
-while [ -f ~/testfile ]
-do
-    echo "As of $(date), the testfile exists."
-    sleep 5
-done
+#while [ -f ~/testfile ]
+#do
+#    echo "As of $(date), the testfile exists."
+#    sleep 5
+#done
 
-echo "As of $(date), the testfile has gone missing."
+#echo "As of $(date), the testfile has gone missing."
+
+#################### Lesson 08 Universal Update Script ####################
+if [ -d /etc/pacman.d ]
+then
+    # The host is based on Arch, run the pacman update command.
+    sudo pacman -Syu
+fi
+
+if [ -d /etc/apt ]
+then
+    # The host is based on Debian or Ubuntu, run the apt version of the command.
+    sudo apt update
+    sudo apt full-upgrade
+fi
