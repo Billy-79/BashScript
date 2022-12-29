@@ -408,19 +408,28 @@
 #    sudo apt full-upgrade
 #fi
 
-#----------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------
 
-release_file=/etc/os-release
+#release_file=/etc/os-release
 
-if grep -q "Arch" $release_file
-then
-    # The host is based on Arch, run the pacman update command.
-    sudo pacman -Syu
-fi
+#if grep -q "Arch" $release_file
+#then
+     # The host is based on Arch, run the pacman update command.
+#    sudo pacman -Syu
+#fi
 
-if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
-then
-    # The host is based on Debian or Ubuntu, run the apt version of the command.
-    sudo apt update
-    sudo apt full-upgrade
-fi
+#if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
+#then
+     # The host is based on Debian or Ubuntu, run the apt version of the command.
+#    sudo apt update
+#    sudo apt full-upgrade
+#fi
+
+#################### Lesson 09 For Loops ####################
+for current_number in 1 2 3 4 5 6 7 8 9 10
+do 
+    echo $current_number
+    sleep 1
+done
+
+echo "This is outside of the for loop"
