@@ -378,13 +378,30 @@
 #echo "As of $(date), the testfile has gone missing."
 
 #################### Lesson 08 Universal Update Script ####################
-if [ -d /etc/pacman.d ]
+#if [ -d /etc/pacman.d ]
+#then
+     # The host is based on Arch, run the pacman update command.
+#    sudo pacman -Syu
+#fi
+
+#if [ -d /etc/apt ]
+#then
+     # The host is based on Debian or Ubuntu, run the apt version of the command.
+#    sudo apt update
+#    sudo apt full-upgrade
+#fi
+
+#------------------------------------------------------------------------------------
+
+release_file=/etc/os-release
+
+if grep -q "Arch" $release_file
 then
     # The host is based on Arch, run the pacman update command.
     sudo pacman -Syu
 fi
 
-if [ -d /etc/apt ]
+if grep -qi "Ubuntu\|Debian" $release_file
 then
     # The host is based on Debian or Ubuntu, run the apt version of the command.
     sudo apt update
