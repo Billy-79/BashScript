@@ -446,10 +446,17 @@
 
 #------------------------------------------------------------------------------------
 
-for n in {1..10}
-do 
-    echo $n
-    sleep 0.5
-done
+#for n in {1..10}
+#do 
+#    echo $n
+#    sleep 0.5
+#done
 
-echo "This is outside of the for loop"
+#echo "This is outside of the for loop"
+
+#------------------------------------------------------------------------------------
+
+for file in logfiles/*.log
+do
+    tar -czvf $file.tar.gz $file
+done
