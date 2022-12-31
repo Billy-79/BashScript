@@ -507,30 +507,53 @@
 
 #################### Lesson 12 Functions ####################
 
-release_file=/etc/os-release
-logfile=~/Working-Directory/BashScript/log/updater.log
-errorlog=~/Working-Directory/BashScript/log/updater_errors.log
+#release_file=/etc/os-release
+#logfile=~/Working-Directory/BashScript/log/updater.log
+#errorlog=~/Working-Directory/BashScript/log/updater_errors.log
 
-check_exit_status() {
-    if [ $? -ne 0 ]
-    then
-        echo "An error occurred, please check the $errorlog file"
-    fi
-}
+#check_exit_status() {
+    #if [ $? -ne 0 ]
+    #then
+        #echo "An error occurred, please check the $errorlog file"
+    #fi
+#}
 
-if grep -q "Arch" $release_file
-then
-    # The host is based on Arch, run the pacman update command.
-    sudo pacman -Syu 1>>$logfile 2>>$errorlog
-    check_exit_status
-fi
+#if grep -q "Arch" $release_file
+#then
+    ## The host is based on Arch, run the pacman update command.
+    #sudo pacman -Syu 1>>$logfile 2>>$errorlog
+    #check_exit_status
+#fi
 
-if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
-then
-    # The host is based on Debian or Ubuntu, run the apt version of the command.
-    sudo apt update 1>>$logfile 2>>$errorlog
-    check_exit_status
+#if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
+#then
+    ## The host is based on Debian or Ubuntu, run the apt version of the command.
+    #sudo apt update 1>>$logfile 2>>$errorlog
+    #check_exit_status
     
-    sudo apt full-upgrade -y 1>>$logfile 2>>$errorlog
-    check_exit_status
-fi
+    #sudo apt full-upgrade -y 1>>$logfile 2>>$errorlog
+    #check_exit_status
+#fi
+
+#################### Lesson 13 Case Statements ####################
+
+echo "What is your favorite Linux distribution?"
+
+echo "1 - Arch"
+echo "2 - CentOS"
+echo "3 - Debian"
+echo "4 - Mint"
+echo "5 - Ubuntu"
+echo "6 - Something else..."
+
+read distro
+
+case $distro in
+    1) echo "Arch is a rolling release.";;
+    2) echo "CentOS is popular on servers.";;
+    3) echo "Debian is a community distribution.";;
+    4) echo "Mint is popular on desktops and laptops.";;
+    5) echo "Ubuntu is popular on both servers and computers.";;
+    6) echo "There are many distributions out there.";;
+    *) echo "You didn't enter an appropriate choice."
+esac
