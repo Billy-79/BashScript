@@ -1,12 +1,14 @@
 #!/bin/bash
 
 #################### Lesson 02 - Hello World! ####################
+
 #echo "Hello World!"
 
 #echo "My current working directory is:"
 #pwd
 
 #################### Lesson 03 - Variables ####################
+
 #myname="Billy"
 #myage="43"
 
@@ -50,6 +52,7 @@
 #echo "Your username is: $USER"
 
 #################### Lesson 05 If Statements ####################
+
 #mynum=200
 
 #if [ $mynum -eq 200 ]
@@ -184,6 +187,7 @@
 #$command
 
 #################### Lesson 06 Exit Codes ####################
+
 #package=htop
 
 #sudo apt install $package
@@ -340,6 +344,7 @@
 #echo "You won't see this one either"
 
 #################### Lesson 07 While Loops ####################
+
 #myvar=1
 
 #while [ $myvar -le 10 ]
@@ -378,6 +383,7 @@
 #echo "As of $(date), the testfile has gone missing."
 
 #################### Lesson 08 Universal Update Script ####################
+
 #if [ -d /etc/pacman.d ]
 #then
      # The host is based on Arch, run the pacman update command.
@@ -426,6 +432,7 @@
 #fi
 
 #################### Lesson 09 For Loops ####################
+
 #for current_number in 1 2 3 4 5 6 7 8 9 10
 #do 
 #    echo $current_number
@@ -462,9 +469,11 @@
 #done
 
 #################### Lesson 11 Data Streams ####################
+
 #release_file=/etc/os-release
 #logfile=~/Working-Directory/BashScript/log/updater.log
 #errorlog=~/Working-Directory/BashScript/log/updater_errors.log
+
 #if grep -q "Arch" $release_file
 #then
 #    # The host is based on Arch, run the pacman update command.
@@ -474,7 +483,7 @@
 #        echo "An error occurred, please check the $errorlog file"
 #    fi
 #fi
-#
+
 #if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
 #then
 #    # The host is based on Debian or Ubuntu, run the apt version of the command.
@@ -492,6 +501,35 @@
 
 #------------------------------------------------------------------------------------
 
-echo "Please enter your name:"
-read myname
-echo "Your name is: $myname"
+#echo "Please enter your name:"
+#read myname
+#echo "Your name is: $myname"
+
+#################### Lesson 12 Functions ####################
+
+release_file=/etc/os-release
+logfile=~/Working-Directory/BashScript/log/updater.log
+errorlog=~/Working-Directory/BashScript/log/updater_errors.log
+
+check_exit_status() {
+    if [ $? -ne 0 ]
+    then
+        echo "An error occurred, please check the $errorlog file"
+    fi
+}
+if grep -q "Arch" $release_file
+then
+    # The host is based on Arch, run the pacman update command.
+    sudo pacman -Syu 1>>$logfile 2>>$errorlog
+    check_exit_status
+fi
+
+if grep -qi "Debian" $release_file || grep -qi "Ubuntu" $release_file
+then
+    # The host is based on Debian or Ubuntu, run the apt version of the command.
+    sudo apt update 1>>$logfile 2>>$errorlog
+    check_exit_status
+    
+    sudo apt full-upgrade -y 1>>$logfile 2>>$errorlog
+    check_exit_status
+fi
