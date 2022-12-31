@@ -517,6 +517,7 @@ check_exit_status() {
         echo "An error occurred, please check the $errorlog file"
     fi
 }
+
 if grep -q "Arch" $release_file
 then
     # The host is based on Arch, run the pacman update command.
