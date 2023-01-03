@@ -2,4 +2,4 @@
 
 #################### Lesson 16 Arguments ####################
 
-echo "You entered the argument: $1."
+ls -lh $1
