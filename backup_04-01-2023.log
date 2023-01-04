@@ -6,5 +6,12 @@ file2
 file3
 file4
 
-sent 147 bytes  received 69 bytes  432.00 bytes/sec
-total size is 2,701  speedup is 12.50 (DRY RUN)
+sent 3,010 bytes  received 133 bytes  6,286.00 bytes/sec
+total size is 2,701  speedup is 0.86
+sending incremental file list
+./
+file1
+newfile
+
+sent 407 bytes  received 57 bytes  928.00 bytes/sec
+total size is 2,701  speedup is 5.82
